@@ -1,5 +1,5 @@
 <?php 
-// error_reporting(0);
+error_reporting(0);
 include('./core/functions.php');
 session_start();
 
@@ -75,12 +75,13 @@ if(isset($_POST['login'])){
     <body>
         <div class="d-flex justify-content-center align-items-center login-wrap" id="login-f">
             <form method="post">
-            <h2 style="display:block;" class="text-white text-center">SMUS - LOGIN</h2><hr>
+            <h2 class="text-center fw-bold title">SMUS - LOGIN</h2><hr>
                 <div class="login-inp-box">
                     <input type="text" name="username" placeholder="Username" autocomplete="off" autofocus required>
                 </div>
-                <div class="login-inp-box">
-                    <input type="password" name="password" placeholder="Password" id="password" required><a style="cursor:pointer; user-select:none;" onclick="vis();" id="eye" class="material-symbols-outlined">visibility</a>
+                <div class="login-inp-box d-flex justify-content-center align-items-center">
+                    <input type="password" name="password" placeholder="Password" id="password" required>
+                    <a style="cursor:pointer; user-select:none;" onclick="vis();" id="eye" class="material-symbols-outlined">visibility</a>
                 </div>
                 <input class="btn btn-primary mt-2" type="submit" name="login" value="Login" style="width:100%; "> 
             </form>
@@ -93,6 +94,30 @@ body{
     background-attachment: fixed;
 }
 
+.title{
+    background: linear-gradient(
+        to right,
+        rgb(17, 118, 207,0.2) 20%,
+        rgb(17, 118, 207,0.3) 30%,
+        rgb(17, 118, 207,0.7) 70%,
+        rgb(17, 118, 207) 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: title 1s ease-in-out infinite alternate;
+}
+@keyframes title {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
 .login-wrap{
     z-index: 1;
     position: absolute;
@@ -101,7 +126,7 @@ body{
 }
 form{
     background-color: rgb(255,255,255,0.1);
-    box-shadow: 4px 4px 2px 2px rgb(0,0,0,0.5);
+    box-shadow: 0px 4px 2px 2px rgb(0,0,0,0.1);
     padding:50px;
     border-radius: 10px;
     /*border-bottom: 4px solid rgb(0, 0, 0,0.5);*/
@@ -112,11 +137,11 @@ form{
     /*background-color:rgb(0,0,0,0.3);*/
 }
 .login-inp-box input{
-    display: inline-flex;
     height: 100%;
     width:80%;
     border:none;
-    color:white;
+    color:black;
+    font-weight:bold;
     outline:none;
     background-color: transparent;
     padding:10px;
@@ -144,6 +169,7 @@ form{
 
 </style>
 <script>
+// For password visibility function, idk why I obfuscated it. ill refactor this sooner or later.
 function _0x41ee(_0x2c9ee3,_0x316f22){var _0x186731=_0x1867();return _0x41ee=function(_0x41ee95,_0x416ab4){_0x41ee95=_0x41ee95-0x180;var _0x3d0c2e=_0x186731[_0x41ee95];return _0x3d0c2e;},_0x41ee(_0x2c9ee3,_0x316f22);}function _0x1867(){var _0xb4cee4=['1318074vXNBUK','919999ErXmeY','getElementById','visibility','type','587521inRMnU','445242cIALby','6444KsOJvS','92brsVcc','2hWgGvf','text','17130rpmoZH','innerHTML','363769LgUHKR','password','16HJSiRE','240LaeYXq','eye','165890EhfIwA'];_0x1867=function(){return _0xb4cee4;};return _0x1867();}(function(_0xc7d739,_0x25e522){var _0x163a87=_0x41ee,_0x28c548=_0xc7d739();while(!![]){try{var _0x4ff8e8=parseInt(_0x163a87(0x184))/0x1+parseInt(_0x163a87(0x18c))/0x2*(parseInt(_0x163a87(0x183))/0x3)+-parseInt(_0x163a87(0x18b))/0x4*(parseInt(_0x163a87(0x182))/0x5)+parseInt(_0x163a87(0x189))/0x6+-parseInt(_0x163a87(0x190))/0x7*(-parseInt(_0x163a87(0x192))/0x8)+parseInt(_0x163a87(0x18a))/0x9*(-parseInt(_0x163a87(0x18e))/0xa)+parseInt(_0x163a87(0x188))/0xb*(parseInt(_0x163a87(0x180))/0xc);if(_0x4ff8e8===_0x25e522)break;else _0x28c548['push'](_0x28c548['shift']());}catch(_0x23f21e){_0x28c548['push'](_0x28c548['shift']());}}}(_0x1867,0x966b4));function vis(){var _0x4b0f54=_0x41ee,_0x254e27=document[_0x4b0f54(0x185)](_0x4b0f54(0x181)),_0x326003=document[_0x4b0f54(0x185)](_0x4b0f54(0x191));_0x326003['type']==_0x4b0f54(0x191)?(_0x254e27['innerHTML']='visibility_off',_0x326003[_0x4b0f54(0x187)]=_0x4b0f54(0x18d)):(_0x254e27[_0x4b0f54(0x18f)]=_0x4b0f54(0x186),_0x326003[_0x4b0f54(0x187)]=_0x4b0f54(0x191));}
 
 <?php if($_SESSION['incorrect_login']){echo "Swal.fire('Incorrect username or password!','','error');";}?>

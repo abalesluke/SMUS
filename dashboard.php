@@ -95,7 +95,7 @@ if(isset($_POST['edit'])){
     </nav>
     <article class="d-flex justify-content-center align-items-center">
         <div class="linkG-wrapper align-items-center text-center">
-            <h3>Ninja Links</h3>
+            <h3>SMUSH Links</h3>
             <div class="link-gen">
                 <form method="post">
                     <input name="url" type="text" onkeyup="cinp();" id="genInp" autocomplete="off" placeholder="Enter url to be shorten">
@@ -137,14 +137,14 @@ while($row = $query->fetch_assoc()){
     $shrt_url = $shrt_url.$current_dir.'/'.$link_id;
     #$shrt_url = 'https://'.$_SERVER["HTTP_HOST"].'/z/'.$row["link_id"];
     echo '
-                        <tr>
-                            <td>'.$row["link_id"].'</td>
-                            <td>'.$row["views"].'</td>
-                            <td><a href="'.$shrt_url.'">'.$shrt_url.'</td>
-                            <td><a class="btn btn-sm btn-outline-primary" onclick="editz(\''.$link_id.'\',\''.$url.'\');">Edit</a></td>
-                            <td><a class="btn btn-sm btn-outline-success" target="_blank" href="'.$url.'">View</a></td>
-                            <td><a class="btn btn-sm btn-outline-danger" href="?rm='.$link_id.'">Delete</a></td>
-                        </tr>';
+        <tr>
+            <td>'.$row["link_id"].'</td>
+            <td>'.$row["views"].'</td>
+            <td><a href="'.$shrt_url.'">'.$shrt_url.'</td>
+            <td><a class="btn btn-sm btn-outline-primary" onclick="editz(\''.$link_id.'\',\''.$url.'\');">Edit</a></td>
+            <td><a class="btn btn-sm btn-outline-success" target="_blank" href="'.$url.'">View</a></td>
+            <td><a class="btn btn-sm btn-outline-danger" href="?rm='.$link_id.'">Delete</a></td>
+        </tr>';
 }
 ?>
                     </tbody>
@@ -167,6 +167,7 @@ while($row = $query->fetch_assoc()){
     padding:10px;
     /*background-color:rgb(0, 0, 0,0.8);*/
     box-shadow: 0px 2px 5px 0px grey;
+    max-height:400px;
 }
 .link-gen input[type=text]{
     padding:3px;

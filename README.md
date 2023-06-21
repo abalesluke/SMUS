@@ -1,6 +1,6 @@
-## PHP_SUS
-PHP Simple-managable Url Shortener | CRUD(Create, Read, Update, Delete)
-<p>Demo site: https://url.craftverse.shop</p>
+## SMUS
+Simple Managable Url Shortener 
+<p>Demo site: </p>
 
 > Demo creds,
 > Username: `guest`

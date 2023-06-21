@@ -28,8 +28,10 @@ this means that using `.htaccess` to forward any subdirectory before /z/ subdire
 
 ## Preview
 > ## **Login**
-![img](https://github.com/abalesluke/abalesluke/blob/main/images/url_login.png?raw=true)
+![image](https://github.com/abalesluke/SMUS/assets/108006281/eaaa1021-f733-4844-9392-7a98c90d6146)
+
 <hr>
 
 > ## **Dashboard**
-![img](https://github.com/abalesluke/abalesluke/blob/main/images/url_dashboard.png?raw=true)
+![image](https://github.com/abalesluke/SMUS/assets/108006281/128c811b-a4b5-4b13-b7d2-a553bc38d223)
+
